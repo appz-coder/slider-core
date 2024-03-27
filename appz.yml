@@ -14,6 +14,7 @@ build:
 deploy:
     context: appz-coder/DEV
     replicas: 1
+    resources: large
     port:
     - 4000
 
