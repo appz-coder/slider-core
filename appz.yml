@@ -12,7 +12,7 @@ build:
 
 
 deploy:
-    context: aryam21/DEV
+    context: appz-coder/DEV
     replicas: 1
     port:
     - 4000
