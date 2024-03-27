@@ -34,5 +34,5 @@ properties:
     DB_DATABASE: slider
     DB_HOST: (postgres-svc-name)
     DB_DIALECT: postgres
-    revision: 0
+    revision: 1
     page_color: Blue
