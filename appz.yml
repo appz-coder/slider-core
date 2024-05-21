@@ -21,7 +21,7 @@ deploy:
 
 properties:
     page_title: "React-bootstrap + nodejs-express App"
-    ##site_url: "https://hellonodejs.appzclient.com/"
+    site_url: "https://appz-coder-dev-slider-web-0-1.0314f142.lowtouch.cloud/"
     BUILD_ON_STARTUP: 0
     JWT_SECRET_KEY:
       vault: JWT_SECRET_KEY
