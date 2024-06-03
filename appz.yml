@@ -1,7 +1,7 @@
 app:
     name: slider-core
     code: slider-core
-    notify: aramanan@ecloudcontrol.com
+    notify: mmushraf@ecloudcontrol.com
 
 build:
     version: 0.1
@@ -16,7 +16,7 @@ deploy:
     replicas: 1
     resources: large
     port:
-    - 3000
+    - 4000
 
 
 properties:
