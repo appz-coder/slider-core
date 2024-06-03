@@ -33,7 +33,7 @@ properties:
     DB_PASSWORD:
       vault: POSTGRESQL_SLIDER_PASSWORD
     DB_DATABASE: slider
-    DB_HOST: (postgres-svc-name)
+    DB_HOST: postgres-slider-13-x
     DB_DIALECT: postgres
     revision: 6
     page_color: Blue
