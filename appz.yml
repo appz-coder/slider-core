@@ -16,7 +16,7 @@ deploy:
     replicas: 1
     resources: large
     port:
-    - 4000
+    - 3000
 
 
 properties:
