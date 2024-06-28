@@ -38,12 +38,4 @@ app.use(function(err, req, res, next) {
     return output(res, [], true, res.locals.message, 500);
 });
 
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    exposedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-}));
-
 module.exports = app;
