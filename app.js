@@ -9,26 +9,21 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cookieSession = require("cookie-session");
 
-// const passport = require('passport');
-// require('./middlewares/passport');
-
 const cors = require('cors');
-const expressSession = require('express-session');    
+const expressSession = require('express-session');
 const indexRouter = require('./routes/index');
 const output = require('./helpers/generateOutput');
 
 global.__basedir = __dirname;
 
-// CORS configuration
 app.use(cors({
-    origin: '*',
+    origin: 'https://appz-coder-dev-slider-web-0-1.1276c99e.lowtouch.cloud/', // Test url
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     exposedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
 }));
 
-// Set security headers
 app.use((req, res, next) => {
     res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
     res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
@@ -40,6 +35,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(expressSession({ secret: 'yourSecret', resave: false, saveUninitialized: true }));
+
+// const passport = require('passport');
+// require('./middlewares/passport');
 
 app.use('/api', indexRouter);
 
