@@ -19,13 +19,27 @@ const output = require('./helpers/generateOutput');
 
 global.__basedir = __dirname;
 
-app.use(cors());
+// CORS configuration
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    exposedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+}));
+
+// Set security headers
+app.use((req, res, next) => {
+    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
+    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+    next();
+});
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use('/api', indexRouter);
 
