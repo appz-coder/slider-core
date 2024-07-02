@@ -17,7 +17,7 @@ const output = require('./helpers/generateOutput');
 global.__basedir = __dirname;
 
 app.use(cors({
-    origin: 'https://appz-coder-dev-slider-web-0-1.1276c99e.lowtouch.cloud/', // Test url
+    origin: '*', // Test url
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     exposedHeaders: ['Content-Type', 'Authorization'],
