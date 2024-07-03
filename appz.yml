@@ -23,8 +23,6 @@ properties:
     page_title: "React-bootstrap + nodejs-express App"
     #site_url: "https://appz-coder-dev-slider-web-0-1.0314f142.lowtouch.cloud/"
     BUILD_ON_STARTUP: 0
-    JWT_SECRET_KEY:
-      vault: JWT_SECRET_KEY
     FILES_MAX_SIZE: 20000000
     FILES_STORAGE: public/uploads
     FILES_STORAGE_TMP: public/uploads/tmp
@@ -33,7 +31,7 @@ properties:
     DB_PASSWORD:
       vault: POSTGRESQL_SLIDER_PASSWORD
     DB_DATABASE: slider
-    DB_HOST: (postgres-svc-name)
+    DB_HOST: postgres-slider-13-x
     DB_DIALECT: postgres
     revision: 13
     page_color: Blue
