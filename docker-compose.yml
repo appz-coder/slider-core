@@ -5,7 +5,8 @@ services:
     build:
       context: ./backend
     ports:
-      - 4000:4000
+      #- 4000:4000
+      - 3000:3000
     command: npm start
     container_name: slider-backend
 
