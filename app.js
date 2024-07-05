@@ -9,37 +9,23 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cookieSession = require("cookie-session");
 
+// const passport = require('passport');
+// require('./middlewares/passport');
+
 const cors = require('cors');
-const expressSession = require('express-session');
+const expressSession = require('express-session');    
 const indexRouter = require('./routes/index');
 const output = require('./helpers/generateOutput');
 
 global.__basedir = __dirname;
 
-app.use(cors({
-    origin: '*', // Test url
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    exposedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-}));
-
-app.use((req, res, next) => {
-    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
-    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-    next();
-});
-
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(expressSession({ secret: 'yourSecret', resave: false, saveUninitialized: true }));
-
-// const passport = require('passport');
-// require('./middlewares/passport');
 
 app.use('/api', indexRouter);
 
