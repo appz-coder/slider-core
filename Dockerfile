@@ -1,4 +1,4 @@
-FROM node:14.21.3
+FROM node:22-alpine
 LABEL version="1.0"
 LABEL description="This is the docker image for the slider backend project"
 LABEL maintainer = ["skydev55@outlook.com"]
