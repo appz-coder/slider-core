@@ -8,7 +8,7 @@ build:
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: node-14.21
+    image_template: node-22.11
 
 
 deploy:
@@ -31,7 +31,7 @@ properties:
     DB_PASSWORD:
       vault: POSTGRESQL_SLIDER_PASSWORD
     DB_DATABASE: slider
-    DB_HOST: postgres-slider-13-x
+    DB_HOST: postgres-slider-17-1
     DB_DIALECT: postgres
     revision: 6
     page_color: Blue
